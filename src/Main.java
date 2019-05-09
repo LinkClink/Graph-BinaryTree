@@ -23,7 +23,7 @@ public class Main
         int i = 0;
         int a=0;
         int c=0;
-        int int_scan= 0;
+        int int_scan;
 
 
         while(scanner.hasNextInt())
@@ -53,7 +53,7 @@ public class Main
             a++;
         }
 
-        int loc_table[][] = new int[c/2][c/2];
+        int loc_table[][] = new int[i][i];
 
 
         // not used in this ver
@@ -77,6 +77,7 @@ public class Main
             }
         }
 
+
         // print 1
         System.out.print("In:\n");
         for( charter=0; charter<c/2; charter++)
@@ -93,7 +94,7 @@ public class Main
         charter_2=0;
         int ch,ch_1;
 
-        for(charter=0;charter<loc_table.length;charter++) // insert graph connect in two-dimensional array
+        for(charter=0;charter<c/2;charter++) // insert graph connect in two-dimensional array
         {
                 ch = connections_2[charter][charter_2] -1;
                 ch_1 = connections_2[charter][charter_2+1] -1;
@@ -101,6 +102,7 @@ public class Main
               loc_table[ch][ch_1] = 1 ;
               loc_table[ch_1][ch] = 1 ;
         }
+
 
         //print 2
         System.out.print("Out:\n");
@@ -112,6 +114,7 @@ public class Main
             }
             System.out.print("\n");
         }
+
 
     }
 }
